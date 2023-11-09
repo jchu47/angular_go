@@ -1,24 +1,22 @@
 package server
 
 import (
-	"errors"
 	"fmt"
 	"io"
 	"net/http"
-	"os"
 )
 
-func handleGetRequest(w http.ResponseWriter, r *http.Request) {
+func HandleGetRequest(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("got / request!\n")
 	io.WriteString(w, "Website has rendered!\n")
 }
 
-func setupRoutes() {
-	http.HandleFunc("/get", handleGetRequest)
+func SetupRoutes() {
+	http.HandleFunc("/get", HandleGetRequest)
 }
 
 func StartServer() {
-	setupRoutes()
+	SetupRoutes()
 	fmt.Println("Server listening on 3001")
 	http.ListenAndServe(":8080", nil)
 }
