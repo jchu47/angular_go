@@ -4,10 +4,13 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"angular_go/backend/controller"
 )
 
+// CURRENTLY WORKING ON CONFIGURING GET ROUTE HANDLERS TO GET ALL RECORDS
+
 func HandleGetRequest(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("got / request!\n")
+	controller.getAllAlgos()
 	io.WriteString(w, "Website has rendered!\n")
 }
 
