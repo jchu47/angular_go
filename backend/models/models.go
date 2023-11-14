@@ -7,6 +7,11 @@ type Algo struct {
 	Resource string
 }
 
+type RequestBody struct {
+	Name     string `json:"name"`
+	Resource string `json:"resource"`
+}
+
 // MAYBE LATER
 
 // type Account struct {
