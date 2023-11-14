@@ -2,20 +2,16 @@ package server
 
 import (
 	"fmt"
-	"io"
 	"net/http"
 	"angular_go/backend/controller"
 )
 
 // CURRENTLY WORKING ON CONFIGURING GET ROUTE HANDLERS TO GET ALL RECORDS
-
-func HandleGetRequest(w http.ResponseWriter, r *http.Request) {
-	controller.getAllAlgos()
-	io.WriteString(w, "Website has rendered!\n")
-}
-
 func SetupRoutes() {
-	http.HandleFunc("/get", HandleGetRequest)
+	http.HandleFunc("/get", controller.GetAllAlgos)
+	// http.HandleFunc("/post", controller.GetAllAlgos)
+	// http.HandleFunc("/update", controller.GetAllAlgos)
+	// http.HandleFunc("/delete", controller.GetAllAlgos)
 }
 
 func StartServer() {
